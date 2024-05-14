@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.regex.Pattern;
+
 public class Account {
     private final String name;
 
@@ -10,8 +12,7 @@ public class Account {
     public boolean checkNameToEmboss() {
         return name.length() > 2
                 && name.length() < 20
-                && name.charAt(0) != ' '
-                && name.charAt((name.length() - 1)) != ' '
-                && name.contains(" ");
+                && (Pattern.matches("^[А-Яа-я]*\\s[А-Яа-я]*$", name) // для русских имён
+                || Pattern.matches("^[A-Za-z]*\\s[A-Za-z]*$", name)); // для английских имён
     }
 }
