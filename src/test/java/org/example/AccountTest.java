@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -40,6 +41,7 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("checkValidName")
     public void checkValidName(){
         Account account = new Account(name);
         boolean actual = account.checkNameToEmboss();

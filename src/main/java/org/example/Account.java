@@ -1,5 +1,7 @@
 package org.example;
 
+import io.qameta.allure.Step;
+
 import java.util.regex.Pattern;
 
 public class Account {
@@ -9,6 +11,7 @@ public class Account {
         this.name = name;
     }
 
+    @Step("checkNameToEmboss")
     public boolean checkNameToEmboss() {
         return name.length() > 2
                 && name.length() < 20
